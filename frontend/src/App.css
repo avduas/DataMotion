@@ -1,0 +1,215 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+:root{
+  --backgroundColorMain : #f5f4f4;
+  --fontColorMain : #262429;
+  --fontColorInsufficient3 : #6e6e6e;
+  --fontColorInsufficient2 :rgb(74, 74, 74);
+  --fontColorInsufficient : #929193;
+  --fontSizeBasic: 14px;
+  --fontSizeMiddle: 21px;
+  --fontSizeTitles: 27px;
+
+  --inputText : #fff;
+  --inputBorder : #a1a1a1;
+  --inputTextFocus : #f5f3ff;
+  --inputBorderFocus : #6d689c;
+  --inputTextErr : #f4e9e9;
+  --inputBackgroundErr : #f6eceb;
+  --inputBorderErr : #9d2219;
+
+  --itemLightTheme : #fafafa;
+
+  --modalBodyColor : #494949;
+
+  --additionalColorMain : rgba(16,8,89,1);
+
+  --toggleSwitchColor : rgb(62, 40, 127);
+
+  --colorShadowBox : #aeaeae;
+
+  --dividingLine : #aeaeae;
+
+  --scrollbarTrackColor : #f5f4f4;
+  --scrollbarThumbColor : rgb(44, 44, 48);
+
+  --buttonCreateBackgroundColor : rgb(95, 107, 242);
+
+  --scrollbarTrackColor : #e8e8e8;
+  --scrollbarThumbColor : #a5a3a3;
+  --scrollbarThumbColorActive : #404053;
+  --scrollbarButtonsColor : #c4c4c4;
+
+  /*Heihgts*/
+
+  --mainHeaderHeight : 2.9em;
+  --innerHeaderHeight : 1.4em;
+
+  /*Widths*/
+
+  --customScrollbarWidth : 0.8em;
+
+}
+
+body{
+  font-family: Roboto;
+  font-size: 1em;
+  color : var(--fontColorMain);
+
+  background-color: var(--backgroundColorMain);
+}
+body::-webkit-scrollbar{
+  display: none;
+}
+
+/*Common elements*/
+
+/*container*/
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+
+  min-width: 410px;
+}
+@media (max-width: 576px) {
+  .container {
+    min-width: 100%;
+    width: 100%;
+  }
+}
+@media (min-width: 576px) {
+  .container {
+    min-width: 540px;
+    width: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    min-width: 750px;
+    width: 100%;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    min-width: 970px;
+    width: 100%;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    min-width: 1170px;
+    width: 100%;
+  }
+}
+@media (min-width: 1400px) {
+  .container {
+    min-width: 1320px;
+    width: 100%;
+  }
+}
+
+/*Specific elements of App.jsx*/
+
+#display{
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#appBoard{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+#mainHeader{
+  border-bottom: solid 1px var(--dividingLine);
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  background-color: var(--backgroundColorMain);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 150;
+
+  height: var(--mainHeaderHeight);
+}
+#navSpace{
+  
+}
+#workspace{
+  display: flex;
+  flex-direction: row;
+  height: calc(100%);
+}
+#workspace.regular{
+  padding-left: 3em;  /*refers to navbar icon width*/
+}
+
+/*button for navbar*/
+#hamburgerButton{
+  border: 0px;
+  padding: 0em 0.5em 0em 0.5em;
+  margin-left: 0.3em;
+
+  background: var(--backgroundColorMain);
+}
+#hamburgerButton img{
+  width: 2.3em;
+  height: 2em;
+}
+/*shadow*/
+#shadow{
+  position: absolute;
+  width: 110%;
+  height: 100%;
+  z-index: 49;
+  opacity:0.25;
+  left: -10%;
+
+  box-shadow: inset 9px 9px 500em 5.5em var(--colorShadowBox), inset
+    -9px -9px 500em 5.5em var(--colorShadowBox);
+
+  transition: all 0.5s;
+}
+#shadow.hidden{
+  opacity: 0;
+  z-index: 0;
+}
+/*Every button*/
+button{
+  cursor: pointer;
+  font-size: var(--fontSizeBasic);
+  text-transform: uppercase;
+}
+#dividingLine {
+  height: 1px!important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*some for demo changes*/
+#optionsMenu button{
+  text-transform: none !important;
+}

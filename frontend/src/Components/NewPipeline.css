@@ -1,0 +1,303 @@
+:root{  /*put here all variables that you would need only on that page, not in app.css*/
+
+  --routerMenuHeight : 600px;
+  --routerMenuWidth : 540px;
+
+  --colorShadowBoxRouter : #cfcfcf;
+  --isertTextareaBackground : #fdfcfc;
+
+  --reviseTHBackgroundSelected : #bbc7f4;
+  --reviseTHFontColorNonActive : #a2a2a2;
+
+
+}
+#newPipeline .confirmation{
+  min-height: 620px;
+  height: fit-content;
+  width: calc(var(--routerMenuWidth));
+  padding: 18px;
+  margin: auto;
+  margin-top: 15px;
+
+  border-radius: 5px;
+
+  box-shadow: 1px 1px 4px 0.5px var(--colorShadowBoxRouter), 
+  -1px -1px 4px 0.5px var(--colorShadowBoxRouter);
+
+  display: flex;
+  flex-direction: column;
+}
+#newPipeline .confirmation p{
+  margin-left: 20px;
+  font-size: var(--fontSizeTitles);
+}
+
+#newPipeline {
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 2.9em);
+  position: absolute;
+  left: 2.8em;
+  top: var(--mainHeaderHeight);
+}
+#newPipeline #innerHeader {
+  border-bottom: solid 1px var(--dividingLine);
+  background-color: var(--backgroundColorMain);
+  font-size: 1.7em;
+  height: var(--innerHeaderHeight);
+  display: flex;
+  align-items: center;
+  padding-left: 1.15em;
+  width: 100%;
+}
+#newPipeline #mainCont{
+  position: absolute;
+  top: calc(var(--innerHeaderHeight) + 1em);
+  left: 0.5em;
+
+  width: 99.5%;
+  height: calc(91vh - var(--innerHeaderHeight));
+
+  overflow: scroll;
+}
+#newPipeline #cluster_box {
+  display: flex;
+  justify-content: center;
+}
+
+#newPipeline .cluster:last-child{
+  border-bottom: none;
+}
+#newPipeline .cluster:last-child {
+  margin-bottom: 0;
+}
+#newPipeline .cluster:hover,
+#newPipeline .selected, #newPipeline .route:hover {
+  background-color: #5f6bf2;
+  color: #ffffff;
+}
+#newPipeline .confirmButton {
+  margin-top: 15px;
+  padding: 9px 30px 9px 30px;
+  font-size: var(--fontSizeBasic);
+  text-transform: uppercase;
+
+  border: none;
+  border-radius: 5px;
+
+  color: var(--backgroundColorMain);
+  font-weight: 600;
+  background: var(--buttonCreateBackgroundColor);
+  transition: all 0.3s;
+  border: 1px solid var(--colorShadowBox);
+
+  box-shadow: 2px 2px 0.5em 0.01em var(--colorShadowBox);
+}
+
+#newPipeline .confirmButton:hover{
+  color: var(--buttonCreateBackgroundColor);
+  background: var(--backgroundColorMain);
+  border: 1px solid var(--buttonCreateBackgroundColor);
+}
+#newPipeline .confirmDiv, #newPipeline .confirmDivFirst {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto; 
+}
+#newPipeline .confirmDivFirst{
+  justify-content: center;
+}
+#newPipeline .history {
+  margin-bottom: 10px;
+  font-size: var(--fontSizeTitles);
+  line-height: 1.5;
+  background-color: #f5f4f4;
+  border-bottom: #D2D1D1 1px solid;
+}
+#newPipeline .history p {
+  margin-left: 10px;
+}
+#newPipeline .history button {
+  padding: 4px;
+  padding-left: 5px;
+  padding-right: 9px;
+  font-size: 14px;
+  text-transform: uppercase;
+
+  background-color: #f5f4f4;
+  border: none;
+  border-radius: 0;
+
+  text-align: start;
+}
+#newPipeline .history button img {
+  height: 18px;
+  position: relative;
+  top: 2px;
+  margin-right: 5px;
+}
+#newPipeline .container {
+  max-height: 500px;
+  overflow: auto;
+  box-shadow: 1px 1px 0.45em 1px var(--localShadowBox),
+    -1px -1px 0.45em 1px var(--localShadowBox);
+  border-radius: 5px;
+  background-color: #ffffff;
+  min-width: 50px;
+  width: 98%;
+}
+#newPipeline .nameInput {
+  padding: 10px 0px ;
+  font-size: var(--fontSizeBasic);
+  border: none;
+  outline: none;
+  width: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+  padding-left: 10px;
+}
+#newPipeline .cell{
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  min-width: 100px;
+  margin-left: 10px;
+  font-size: var(--fontSizeBasic);
+}
+#newPipeline .radio {
+  margin-left: 20px;
+  min-width: 10px;
+  display: flex;
+  align-self: center;
+}
+#newPipeline .route, #newPipeline .cluster  {
+  display: grid;
+  grid-template-rows: auto;
+  gap: 10px; 
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc;
+}
+#newPipeline .route{
+  grid-template-columns: 1fr 1.25fr 0.25fr; 
+}
+#newPipeline .cluster{
+  grid-template-columns: 0.5fr 0.5fr 1fr ; 
+}
+#newPipeline .route:last-child {
+  border-bottom: none;
+}
+#newPipeline .content {
+  display: flex;
+  flex-direction: row;
+}
+#newPipeline #configCont #firstStr p{
+  font-size: var(--fontSizeTitles);
+  margin-left: 23px;
+  margin-top: 8px;
+  color: var(--fontColorInsufficient3);
+}
+#newPipeline #configCont #optCont{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  column-gap: 5px;
+  padding: 10px;
+  padding-right: 4%;
+  overflow: auto;
+}
+#newPipeline #configCont #optCont .option{
+  padding: 3px;
+  cursor: pointer;
+  transition: background-color 0.5s;
+  padding-right: 10px;
+}
+#newPipeline #configCont #optCont .option.active{
+  outline: 2px solid var(--dividingLine);
+  border-radius: 5px;
+  background-color: var(--isertTextareaBackground);
+}
+#newPipeline #configCont #optCont .option:hover{
+  outline: 2px solid var(--dividingLine);
+  border-radius: 5px;
+  background-color: var(--isertTextareaBackground);
+}
+#newPipeline #configCont #optCont .option img{
+  width: 60px;
+  height: 60px;
+}
+#newPipeline #configCont #optCont .option div{
+  width: 60px;
+  text-align: center;
+  font-size: var(--fontSizeBasic);
+
+}
+#newPipeline #configCont #inputs{
+  display: flex;
+  flex-direction: column;
+}
+#newPipeline #configCont #inputs .inputStr:first-of-type .smallInp {
+  margin-left: 10px;
+}
+#newPipeline #configCont #inputs .inputStr{
+  display: flex;
+  flex-direction: row;
+  margin-top: 9px;
+}
+#newPipeline #configCont #inputs .inputStr div{
+  font-size: var(--fontSizeBasic);
+}
+#newPipeline #configCont #inputs .inputStr input{
+  margin-left: auto;
+  margin-right: 45px;
+  width: calc(100% - 229px);
+  background-color: var(--isertTextareaBackground);
+  border: 1px solid var(--dividingLine);
+  padding: 3px;
+  padding-left: 5px;
+  font-size: var(--fontSizeBasic);
+  font-family: roboto;
+  border-radius: 3px;
+}
+#newPipeline #configCont #inputs .inputStr input:focus{
+  outline: 1.5px solid var(--dividingLine);
+}
+
+#newPipeline #errMes{
+  margin-top: 7px;
+  color: var(--inputBorderErr);
+  margin-left: 20px;
+  font-weight: 400;
+  font-size: var(--fontSizeBasic);
+}
+
+#newPipeline  input.err{
+  width: calc(100% - 3px) ;
+  outline: 1px solid var(--inputBorderErr);
+  background-color: var(--inputBackgroundErr);
+}
+
+#newPipeline ::-webkit-scrollbar{
+  display: none;
+}
+
+#newPipeline .container::-webkit-scrollbar{
+  display: block;
+  width: var(--customScrollbarWidth);
+}
+#newPipeline .container::-webkit-scrollbar-track{
+  background-color: var(--scrollbarTrackColor);
+  width: var(--customScrollbarWidth);
+}
+#newPipeline .container::-webkit-scrollbar-thumb{
+  background-color: var(--scrollbarThumbColor);
+  width: var(--customScrollbarWidth);
+  min-height: 1em;
+}
+#newPipeline .container::-webkit-scrollbar-thumb:active{
+  background-color: var(--scrollbarThumbColorActive);
+  width: var(--customScrollbarWidth);
+}
+#newPipeline .container::-webkit-scrollbar:horizontal{
+  display: none;
+}

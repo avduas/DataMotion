@@ -1,0 +1,108 @@
+/*Common for all nodes*/
+:root{
+    --customNodeImgSelBorder : #532323;
+}
+.customNode{
+    height: 6em;
+    width: fit-content;
+}
+/*rewriting original react flow css*/
+.react-flow__node{
+    padding: 0 !important;
+    width: fit-content !important;
+    height: fit-content !important;
+    background: none !important;
+    border: none !important;
+}
+.react-flow__node:hover{
+    box-shadow: none !important;
+}
+.react-flow__node.selected{
+    box-shadow: none !important;
+}
+.react-flow__node img{
+    transition: all 0.35s;
+}
+.react-flow__node.selected img{
+    height: 7.5em;
+    /*scale: 1.4;*/
+}
+.react-flow__node img.editButton{
+    position: absolute;
+    height: 1.9em;
+    z-index: 15;
+    cursor: pointer;
+
+    height: 0;
+    opacity: 0;
+}
+.react-flow__node.selected img.editButton{
+    height: 2.25em;
+    opacity: 1;
+}
+/*rewriting edges*/
+
+.react-flow__edge-path{
+    stroke-dasharray: 0em 1.5em !important;
+    stroke-dashoffset: 10%;
+    stroke-width: 1em !important;
+    stroke-opacity: 0.75 !important;
+    stroke-linecap: round;
+
+    filter: brightness(0) saturate(100%) invert(57%) sepia(15%) saturate(265%) hue-rotate(180deg) brightness(92%) contrast(89%);
+
+    /*stroke: rgb(131, 138, 151) !important;*/
+}
+.react-flow__edge.selected{
+    filter: brightness(0) saturate(100%) invert(40%) sepia(5%) saturate(1933%) hue-rotate(181deg) brightness(88%) contrast(95%);
+
+    /*stroke: rgb(56, 66, 85) !important;*/
+}
+
+/*Node Label*/
+.react-flow__node #nodeLabel{
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+
+    font-size: var(--fontSizeBasic);
+    width: fit-content;
+    min-height: var(--fontSizeBasic);
+    padding: 2px;
+    padding-top: 0px;
+    background-color: var(--backgroundColorMain);
+    outline: 1px solid var(--dividingLine);
+    border-radius: 4px;
+
+    transition: all 0.3s;
+
+    opacity: 0.45;
+
+    word-break: unset;
+
+    white-space: nowrap;
+}
+.react-flow__node.selected #nodeLabel{
+    font-size: 18px;
+    font-weight: 600;
+    opacity: 1;
+}
+        /*Some corrections of label displaying*/
+        div.react-flow__node-customConnectorInNode #nodeLabel{
+            right: 9%;
+        }
+        div.react-flow__node-customConnectorOutNode #nodeLabel{
+            left: 15%;
+        }
+        div.react-flow__node-customConnectorOutNode.selected #nodeLabel{
+        }
+
+/*For each certain type of node*/
+.customNode#inputNode{
+    
+}
+img.customNode#inputNode{
+    
+}

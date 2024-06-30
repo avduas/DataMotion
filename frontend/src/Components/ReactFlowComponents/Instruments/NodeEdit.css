@@ -1,0 +1,323 @@
+:root {
+  --editWidth: 340px;
+  --rightFix: 5px;
+}
+
+/*Enabling button*/
+#openEdit {
+  position: absolute;
+  right: calc(-1 * var(--rightFix));
+  top: 2em;
+
+  padding: 0.5em 0.25em 0.5em 0.5em;
+  background: var(--backgroundColorMain);
+
+  border: 1px solid var(--fontColorInsufficient);
+  border-right: 0px;
+  border-radius: 0.65em 0 0 0.65em;
+
+  z-index: 16;
+
+  transition: all 0.5s;
+
+  outline: none;
+}
+#openEdit.active {
+  right: calc(var(--editWidth));
+  box-shadow: -1px 1px 0.2em 0.01em var(--colorShadowBox);
+}
+#openEdit img {
+  height: 2em;
+}
+
+/*main editing board*/
+#nodeEdit {
+  height: 100%;
+  width: var(--editWidth);
+
+  position: absolute;
+  right: calc(-1 * var(--editWidth) - var(--rightFix));
+  z-index: 15;
+
+  background: var(--backgroundColorMain);
+
+  border-left: 1px solid var(--fontColorInsufficient);
+
+  transition: all 0.5s;
+
+  outline: none;
+}
+#nodeEdit.active {
+  right: 0;
+  box-shadow: -1px 1px 0.1em 0.01em var(--colorShadowBox);
+}
+#nodeEdit #buttonCont {
+  position: absolute;
+  width: 100%;
+  height: 60px;
+  bottom: 0;
+  background-color: var(--backgroundColorMain);
+  border-top: 1px solid var(--dividingLine);
+}
+#nodeEdit button#saveChanges {
+  margin-top: 7px;
+  margin-bottom: 1em;
+  margin-left: 7px;
+
+  padding: 0em 1.5em 0em 1.5em;
+  height: 3em;
+  width: calc(100% - 14px);
+
+  font-size: var(--fontSizeBasic);
+
+  border: none;
+  border-radius: 0.3em;
+
+  color: var(--backgroundColorMain);
+  font-weight: 600;
+  background: var(--buttonCreateBackgroundColor);
+  transition: all 0.3s;
+  border: 1px solid var(--colorShadowBox);
+
+  box-shadow: 2px 2px 0.5em 0.01em var(--colorShadowBox);
+}
+#nodeEdit button#saveChanges:hover {
+  color: var(--buttonCreateBackgroundColor);
+  background: var(--backgroundColorMain);
+  border: 1px solid var(--buttonCreateBackgroundColor);
+}
+/*Input container*/
+#nodeEdit #imports {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-left: 1px solid var(--dividingLine);
+}
+/* Scrollable imports */
+#nodeEdit #imports {
+  overflow-y: auto;
+}
+#nodeEdit #imports::-webkit-scrollbar {
+  display: block;
+  width: var(--customScrollbarWidth);
+}
+#nodeEdit #imports::-webkit-scrollbar-track {
+  background-color: var(--scrollbarTrackColor);
+  width: 15px;
+}
+#nodeEdit #imports::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbarThumbColor);
+  width: 15px;
+  min-height: 1em;
+}
+#nodeEdit #imports::-webkit-scrollbar-thumb:active {
+  background-color: var(--scrollbarThumbColorActive);
+  width: var(--customScrollbarWidth);
+}
+#nodeEdit #imports ::-webkit-scrollbar {
+  display: block;
+  width: 10px;
+}
+#nodeEdit #imports ::-webkit-scrollbar-track {
+  /*background-color: var(--scrollbarTrackColor);*/
+  width: 18px;
+}
+#nodeEdit #imports ::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbarThumbColor);
+  width: 9px;
+  min-height: 35px;
+  border-radius: 3px;
+  border: 2px solid var(--backgroundColorMain);
+}
+#nodeEdit #imports ::-webkit-scrollbar-thumb:active {
+  background-color: var(--scrollbarThumbColorActive);
+  width: var(--customScrollbarWidth);
+}
+/* //////////////////////////////////////// */
+#nodeEdit #imports #importsCont #chooseModel,
+#nodeEdit #imports #importsCont #srcCode {
+  border-bottom: 1px solid var(--dividingLine);
+}
+#nodeEdit p.inputP {
+  font-size: var(--fontSizeBasic);
+  padding: 5px;
+  border-bottom: 1px solid var(--dividingLine);
+  font-weight: 700;
+}
+#nodeEdit p.inputP#nodeProp{
+  border-left: 1px solid var(--dividingLine);;
+}
+#nodeEdit #imports #description {
+  border-bottom: none;
+  padding-bottom: 60px;
+}
+#nodeEdit #imports #description textarea {
+  width: calc(100% - 1.3em);
+  margin: 0.25em;
+  padding: 0.3em;
+  min-height: 9em;
+  border-radius: 0.4em;
+  resize: none;
+}
+#nodeEdit #imports #description textarea:focus {
+  outline: 1px solid var(--fontColorMain);
+}
+/*Choose node message*/
+#nodeEdit #chooseSmth {
+  width: fit-content;
+  font-size: var(--fontSizeTitles);
+  margin-left: 27px;
+  margin-top: 50px;
+  padding: 21px;
+  border: 1px solid var(--dividingLine);
+  border-radius: 0.3em;
+  box-shadow: 2px 2px 0.15em 0.01em var(--colorShadowBox);
+}
+/*Opt with Source code*/
+#nodeEdit #srcCode div {
+  display: flex;
+  flex-direction: row;
+}
+#nodeEdit #srcCode div p {
+  margin-right: auto;
+  border: none;
+}
+#nodeEdit #srcCode div img {
+  height: 25px;
+  align-self: center;
+  filter: brightness(0) saturate(100%) invert(30%) sepia(96%) saturate(873%)
+    hue-rotate(211deg) brightness(114%) contrast(90%);
+}
+#nodeEdit #srcCode div button {
+  margin-left: 9px;
+  margin-right: 12px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  padding: 4px 15px 4px 15px;
+
+  font-size: var(--fontSizeBasic);
+
+  border: none;
+  border-radius: 5px;
+
+  color: var(--backgroundColorMain);
+  font-weight: 600;
+  background: var(--buttonCreateBackgroundColor);
+  transition: all 0.3s;
+  border: 1px solid var(--colorShadowBox);
+
+  box-shadow: 2px 2px 0.5em 0.01em var(--colorShadowBox);
+}
+#nodeEdit #srcCode div button:hover {
+  color: var(--buttonCreateBackgroundColor);
+  background: var(--backgroundColorMain);
+  border: 1px solid var(--buttonCreateBackgroundColor);
+}
+/*common selection container*/
+#selectionCont {
+  margin: 6px;
+  margin-bottom: 8px;
+  min-height: 200px;
+  max-height: 290px;
+  overflow-y: auto;
+}
+@media (min-height: 1200px) {
+  #selectionCont{
+    max-height: 400px;
+  }
+}
+/*chooseModel*/
+
+#nodeEdit #chooseModel {
+}
+#nodeEdit #chooseModel p {
+  font-size:var(--fontSizeBasic);
+  padding: 4px;
+}
+#nodeEdit #chooseModel #selectionCont{
+  height: 250px;
+}
+#nodeEdit #chooseModel #selectionCont div.modelItem {
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  margin-top: 5px;
+  font-size: var(--fontSizeBasic);
+  padding: 7px 3px 7px 3px;
+  border-radius: 4px;
+  border: 1px solid var(--dividingLine);
+  align-items: center;
+
+  background-color: var(--inputText);
+}
+#nodeEdit #chooseModel #selectionCont div.modelItem:hover,
+#nodeEdit #chooseModel #selectionCont div.modelItem.selected {
+  background-color: var(--buttonCreateBackgroundColor);
+  color: var(--inputText);
+  box-shadow: 2px 2px 5px 0.2px var(--colorShadowBox);
+}
+#nodeEdit #chooseModel #selectionCont div.modelItem input[type="radio"] {
+  height: 18px;
+  width: 18px;
+  margin-right: 9px;
+}
+#nodeEdit #chooseModel #selectionCont div.modelItem div {
+  margin-left: 9px;
+  font-size: var(--fontSizeBasic);
+  width: 135px;
+  overflow: hidden;
+}
+/* Aggregator */
+#nodeEdit #aggregator #dimensions,
+#nodeEdit #aggregator #metrics {
+  border-bottom: 1px solid var(--dividingLine);
+}
+#nodeEdit div.columnItem {
+  display: flex;
+  flex-direction: row;
+  margin-top: 5px;
+  font-size: var(--fontSizeBasic);
+  padding: 4px 1px 3px 1px;
+  border-radius: 4px;
+  border: 1px solid var(--dividingLine);
+
+  background-color: var(--inputText);
+}
+#nodeEdit div.columnItem.disabled {
+  color: var(--fontColorInsufficient);
+}
+#nodeEdit div.columnItem.disabled * {
+  opacity: 0.4;
+}
+#nodeEdit div.columnItem input[type="checkbox"] {
+  height: 15px;
+  width: 15px;
+  margin-left: 3px;
+}
+#nodeEdit div.columnItem div {
+  margin-left: 9px;
+  font-size: 12px;
+  width: 90px;
+  overflow: hidden;
+  text-wrap: nowrap;
+}
+#nodeEdit div.columnItem div#columnType div {
+  width: fit-content;
+  color: var(--backgroundColorMain);
+  padding: 2px 4px 2px 4px;
+  background-color: var(--buttonCreateBackgroundColor);
+  border-radius: 3px;
+}
+#nodeEdit div.columnItem #selectAction select,
+#nodeEdit div.columnItem #selectAction select option {
+  font-size: 12px;
+  cursor: pointer;
+}
+#nodeEdit #emptyMes {
+  font-size: var(--fontSizeBasic);
+  font-weight: 700;
+  background-color: var(--backgroundColorMain);
+  padding: 9px;
+  padding-left: 7px;
+  border: 1px solid var(--dividingLine);
+}

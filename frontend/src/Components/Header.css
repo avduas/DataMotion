@@ -1,0 +1,142 @@
+#headerCont{
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    min-width: fit-content;
+
+    background-color: var(--backgroundColorMain);
+
+    z-index: 14;
+}
+#headerCont #companiesLogos{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+#headerCont #companiesLogos a{
+    display: flex;
+}
+#headerCont #verticalLine{
+    height: calc(80%);
+    align-self: center;
+    width: 2px;
+    background-color: var(--dividingLine);
+}
+#headerCont #ditomicLogo{
+    height: 2.3em;
+    padding: 0.3em;
+}
+#headerCont #companyLogo{
+    height: 2.3em;
+    padding: 0.3em;
+    margin-left: 0.3em;
+}
+
+#headerCont #userInterface{
+    margin-left: auto;
+    display: flex;
+    flex-direction: row;
+}
+#headerCont #userInterface div{
+    align-self: center;
+    margin-right: 0.3em;
+}
+#headerCont #userInterface div img{
+    height: 1.4em;
+    padding: 0.3em;
+}
+#headerCont #userInterface div img:hover{
+    box-shadow: 2px 2px 0.5em 0.01em var(--colorShadowBox),
+    -2px -2px 0.5em 0.01em var(--colorShadowBox);
+    background: none;
+
+    border-radius: 2em;
+}
+/*svg handling*/
+#headerCont #userInterface div{
+    background-color: transparent;
+    background: rgba(0, 0, 0, 0);
+    cursor: pointer;
+}
+#headerCont #userInterface div object{
+    width: 2em;
+    height: 2em;
+    z-index: 15;
+    stroke: rgb(170, 38, 38);
+    color: rgb(156, 31, 31);
+
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+}
+#headerCont #userInterface div object svg{
+    color: red;
+}
+#headerCont #userInterface div object:hover{
+    box-shadow: 9px 9px 5em 0.3em var(--colorShadowBox),
+    -9px -9px 5em 0.3em var(--colorShadowBox);
+
+    border-radius: 1em;
+}
+/*continue*/
+#headerCont #userInterface div#contact img{
+    height: 2.3em;
+    padding: 0em;
+}
+#headerCont #userInterface div#userPic img{
+    height: 2.1em;
+    padding: 0.15em;
+}
+
+/*for accout menu file*/
+
+#accWindow{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+
+    right: 1em;
+    top: 3.25em;
+
+    z-index: 9;
+
+    min-width: 9em;
+    height: 15em;
+
+    background: var(--backgroundColorMain);
+
+    padding: 0.6em;
+    border-radius: 3%;
+
+    box-shadow: 1px 1px 0.15em 0.05em var(--colorShadowBox),
+    -1px -1px 0.15em 0.05em var(--colorShadowBox);
+
+    transition: all 0.5s;
+}
+#accWindow.hidden{
+    top: -20em;
+}
+#accWindow button{
+    margin-top: auto;
+
+    padding: 4px 15px 4px 15px;
+
+    font-size: 14px;
+    text-transform: uppercase;
+
+    border: none;
+    border-radius: 5px;
+
+    color: var(--backgroundColorMain);
+    font-weight: 600;
+    background: var(--buttonCreateBackgroundColor);
+    transition: all 0.3s;
+    border: 1px solid var(--colorShadowBox);
+
+    box-shadow: 2px 2px 0.5em 0.01em var(--colorShadowBox);
+}
+#accWindow button:hover{
+    color: var(--buttonCreateBackgroundColor);
+    background: var(--backgroundColorMain);
+    border: 1px solid var(--buttonCreateBackgroundColor);
+}

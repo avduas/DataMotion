@@ -1,0 +1,156 @@
+:root{
+    --iconNavWidth : 1.25em;
+    --iconNavHeight : 1.25em; 
+
+    --navbarPointer : rgb(78, 62, 155);
+    --navbarPointedBackground : rgb(224, 224, 245);
+    --navbarHoverBackground : rgb(205, 205, 205);
+}
+#navbar{
+    display: flex;
+    flex-direction: column;
+
+    min-width: fit-content;
+    position: absolute;
+    z-index: 50;
+
+    height: 100%;
+
+    left: 0em; /*use cal after*/
+
+    border-right: solid 1px var(--dividingLine);
+
+    transition: all 0.5s;
+
+    background-color: var(--backgroundColorMain);
+}
+#navbar:hover{
+    left: 0em;
+}
+#navbar #stickyPart{
+    position: sticky;
+    top: 3em;
+}
+#navbar .navbarItem{
+    height: calc(var(--innerHeaderHeight) + 0.17em);
+
+    margin-top: 0.5em;
+
+    display: flex;
+    padding: 0.2em;
+
+    padding-right: 0.15em;
+
+    transition: all 0.5s;
+}
+#navbar .navbarItem:hover{
+    background: var(--navbarHoverBackground);
+    border-radius: 0 0.75em 0.75em 0;
+}
+#navbar .navbarItem.pointed{
+    background: var(--navbarPointedBackground);
+    border-radius: 0 0.75em 0.75em 0;
+}
+#navbar .navbarItem:first-of-type{
+    margin-top: 0;
+}
+#navbar .navbarItem{                /*For nice hover and pointed state*/
+    margin-right: 1em;
+
+    transition: border-radius 0s;
+    transition: margin 0.5s;
+
+    position: relative;
+
+    cursor: pointer;
+}
+#navbar .navbarItem.hidden{         /*For nice hover and pointed state*/
+    margin-right: 0em;
+    padding-right: 0;
+    border-radius: 0;
+}
+#navbar .navbarItem.hidden a div{   /*For nice hover and pointed state*/
+    margin-left: 0;
+}
+#navbar .navbarItem a{
+    color: var(--fontColorMain);
+    text-decoration: none;
+    display: flex;
+    width: auto;
+}
+#navbar .navbarItem a:hover{
+    background: none;
+}
+#navbar .navbarItem a div{
+    font-size: 0.9em;
+    align-self: center;
+    margin-left: 0.5em;
+    margin-bottom: 0.3em;
+    max-width: 9em;
+
+    overflow: hidden;
+    display: block;
+    transition: all 0.5s;
+    height: 1.2em;
+}
+#navbar .navbarItem a div.hidden{
+    max-width: 0;
+}
+#navbar .navbarItem img{
+    width: var(--iconNavWidth);
+    height: var(--iconNavHeight);
+    margin-left: auto;
+}
+/* IMG PLUS */
+#navbar .navbarItem img.plus{
+    height: 12px;
+    width: 12px;
+    background-color: var(--backgroundColorMain);
+    outline: 0.5px solid var(--backgroundColorMain);
+    border-radius: 15px;
+    position: absolute;
+    left: 13px;
+    bottom: 7px;
+
+}
+#navbar .navbarItem:hover img.plus{
+    background: var(--navbarHoverBackground);
+    outline: 1px solid var(--navbarHoverBackground);
+}
+#navbar .navbarItem.pointed img.plus{
+    background: var(--navbarPointedBackground);
+    outline: 0.5px solid var(--navbarPointedBackground);
+}
+/* /////////////////////////////////// */
+#navbar .navbarItem .pointer{
+    width: 0.15em;
+    border-radius: 20%;
+    height: 100%;
+    margin-right: 0.35em;
+}
+#navbar .navbarItem .pointer.active{
+    background: var(--navbarPointer);
+}
+
+#navbar .dividingLine{
+    margin-left: auto;
+    margin-right: auto;
+    /*width: calc(100% - var(--iconNavWidth));*/
+
+    width: 100%;
+
+    height: 1px;
+    background-color: var(--dividingLine);
+
+    margin-top: 1.2em;
+
+    transition: all 0.5s;
+}
+#navbar .dividingLine#first{
+    margin-top: 0.3em;
+}
+#navbar .dividingLine.hidden{
+    /*width: 0;
+    margin-top: 0;
+    margin-bottom: 0;*/
+}

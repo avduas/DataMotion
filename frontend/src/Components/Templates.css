@@ -1,0 +1,409 @@
+:root{  /*put here all variables that you would need only on that page, not in app.css*/
+    --itemHeight : 120px;
+    --itemWidth : 305px;
+    --itemFont : 1em;
+    --elemNumberHeight : 5em;
+    --pFontSize : 14px;
+
+    --optionsMenuColor : var(--backgroundColorMain);
+    --optionsMenuColorHover : #e8e8e8;
+
+    --localShadowBox : #d4d4d4;
+}
+
+/*General page overlay (In fact, it's mostly universal for most of the pages, you don't need to change anything there)*/
+/*But if it would occures that you need to, ask me first*/
+#templates{
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 2.9em);
+
+    position: absolute;
+    left: 2.8em;
+    top: var(--mainHeaderHeight);
+}
+#templates #innerHeader{
+    border-bottom: solid 1px var(--dividingLine);
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    background-color: var(--backgroundColorMain);
+
+    position: absolute;
+    top: 0;
+    z-index: 30;
+
+    width: 100%;
+
+    font-size: 1.7em;
+    height: var(--innerHeaderHeight);;
+    justify-self: center;
+}
+#templates #innerHeader p{
+    margin-top: 0.1em;
+    margin-left: 1.15em;
+}
+#templates #innerHeader button{
+    padding: 0em 1.5em 0em 1.5em;
+    /*height: 80%;
+    align-self: center;
+    margin-left: auto;
+    margin-right: 3em;*/
+    height: 2.3em;
+    position: absolute;
+    right: 11em;
+    top: calc(var(--innerHeaderHeight) + 0.1em);
+
+    border: none;
+    border-radius: 0.3em;
+
+    color: var(--backgroundColorMain);
+    font-weight: 600;
+    background: var(--buttonCreateBackgroundColor);
+    transition: all 0.3s;
+    border: 1px solid var(--colorShadowBox);
+
+    box-shadow: 2px 2px 0.5em 0.01em var(--colorShadowBox);
+}
+#templates #innerHeader button:hover{
+    color: var(--buttonCreateBackgroundColor);
+    background: var(--backgroundColorMain);
+    border: 1px solid var(--buttonCreateBackgroundColor);
+}
+#templates #mainCont{
+    position: absolute;
+    top: calc(var(--innerHeaderHeight) + 1em);
+    left: 0.5em;
+
+    width: 99.5%;
+    height: calc(91vh - var(--innerHeaderHeight));
+
+    overflow: scroll;
+}
+
+#templates ::-webkit-scrollbar{
+    display: none;
+}
+
+/*YOUR CODE STARTS HERE, PLEASE, USE #templates ID INFRONT OF THE EACH STYLE DESCRIBING BLOCK !*/
+
+#templates #templatesCont{
+    padding: calc(0.1 * var(--itemHeight));
+
+    justify-content: left;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-bottom: 50px;
+
+    max-width: 100%;
+    height: fit-content;
+    min-width: fit-content;
+
+    overflow-y: scroll;
+    row-gap: 12px;
+    column-gap: 18px;
+}
+/* @media (min-width: 1260px) {
+    #templates #templatesCont{
+        column-gap: calc(0.035 * var(--itemWidth) + (1.35vw));
+    }
+} */
+/*Custom scrollbar*/
+#templates ::-webkit-scrollbar{
+    display: none;
+}
+#templates #mainCont::-webkit-scrollbar{
+    display: block;
+    width: var(--customScrollbarWidth);
+}
+#templates #mainCont::-webkit-scrollbar-track{
+    background-color: var(--scrollbarTrackColor);
+    width: var(--customScrollbarWidth);
+}
+#templates #mainCont::-webkit-scrollbar-thumb{
+    background-color: var(--scrollbarThumbColor);
+    width: var(--customScrollbarWidth);
+    min-height: 1em;
+}
+#templates #mainCont::-webkit-scrollbar-thumb:active{
+    background-color: var(--scrollbarThumbColorActive);
+    width: var(--customScrollbarWidth);
+}
+#templates #mainCont::-webkit-scrollbar:horizontal{
+    display: none;
+}
+
+/*THERE YOU WOULD WRITE A CODE ASSOCIATED WITH SPECIFIC CHILD ELEMENT CALLED <<TemplateItem>>, USING CLASSNAME .templateItem*/
+/*Template Item*/
+
+#templates .templateItem{
+    /*padding: calc( 0.1 * var(--itemHeight));*/
+    background: var(--itemLightTheme);
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.25em;
+    padding-left: 9px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+
+    height: var(--itemHeight);
+    width: var(--itemWidth);
+
+    box-shadow: 1px 1px 0.25em 1px var(--localShadowBox), 
+    -1px -1px 0.25em 1px var(--localShadowBox);
+}
+#templates .templateItem:hover{
+    box-shadow: 1px 1px 0.45em 0.05em var(--colorShadowBox), 
+    -1px -1px 0.45em 0.05em var(--colorShadowBox);
+}
+#templates .templateItem #itemCont{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+/*Number of elements*/
+#templates .templateItem #itemCont #numbOfElem{
+    height: var(--elemNumberHeight);
+    width: var(--elemNumberHeight);
+
+    display: block;
+    position: relative;
+    top: 1.1em;
+}
+#templates .templateItem #itemCont #numbOfElem img{
+    height: var(--elemNumberHeight);
+    width: var(--elemNumberHeight);
+}
+#templates .templateItem:nth-of-type(1n) #itemCont #numbOfElem img{                  /*for coloring list elements pseudo-markers in Task stats*/
+    filter: brightness(0) saturate(100%) invert(8%) sepia(90%) saturate(5591%) hue-rotate(257deg) brightness(96%) contrast(88%);
+}
+#templates .templateItem:nth-of-type(2n) #itemCont #numbOfElem img{
+    filter: brightness(0) saturate(100%) invert(53%) sepia(89%) saturate(5606%) hue-rotate(315deg) brightness(90%) contrast(92%);
+}
+#templates .templateItem:nth-of-type(3n) #itemCont #numbOfElem img{
+    filter: brightness(0) saturate(100%) invert(54%) sepia(91%) saturate(402%) hue-rotate(127deg) brightness(90%) contrast(91%);
+}
+#templates .templateItem:nth-of-type(4n) #itemCont #numbOfElem img{
+    filter: brightness(0) saturate(100%) invert(27%) sepia(28%) saturate(4806%) hue-rotate(266deg) brightness(92%) contrast(96%);
+}
+#templates .templateItem:nth-of-type(5n) #itemCont #numbOfElem img{
+    filter: brightness(0) saturate(100%) invert(75%) sepia(17%) saturate(1287%) hue-rotate(166deg) brightness(91%) contrast(93%);
+}
+#templates .templateItem #itemCont #numbOfElem div{
+    position: absolute;
+    font-size: calc(var(--elemNumberHeight) / 3);
+    font-weight: 1000;
+    top: 30%;
+    transform: translateY(-50%);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 15;
+    background-color: var(--backgroundColorMain);
+    padding: 0px 4px 0px 4px;
+    border-radius: 3px;
+}
+#templates .templateItem:nth-of-type(1n) #itemCont #numbOfElem span{                  /*for coloring list elements pseudo-markers in Task stats*/
+    filter: brightness(0) saturate(100%) invert(8%) sepia(90%) saturate(5591%) hue-rotate(257deg) brightness(96%) contrast(88%);
+}
+#templates .templateItem:nth-of-type(2n) #itemCont #numbOfElem span{
+    filter: brightness(0) saturate(100%) invert(53%) sepia(89%) saturate(5606%) hue-rotate(315deg) brightness(90%) contrast(92%);
+}
+#templates .templateItem:nth-of-type(3n) #itemCont #numbOfElem span{
+    filter: brightness(0) saturate(100%) invert(54%) sepia(91%) saturate(402%) hue-rotate(127deg) brightness(90%) contrast(91%);
+}
+#templates .templateItem:nth-of-type(4n) #itemCont #numbOfElem span{
+    filter: brightness(0) saturate(100%) invert(27%) sepia(28%) saturate(4806%) hue-rotate(266deg) brightness(92%) contrast(96%);
+}
+#templates .templateItem:nth-of-type(5n) #itemCont #numbOfElem span{
+    filter: brightness(0) saturate(100%) invert(75%) sepia(17%) saturate(1287%) hue-rotate(166deg) brightness(91%) contrast(93%);
+}
+/*Main text content*/
+#templates .templateItem #itemCont #textCont{
+    display: flex;
+    flex-direction: column;
+}
+#templates .templateItem #itemCont #textCont #templateName{
+    margin-left: 13px;
+    height: 65px;
+    width: auto !important;
+    overflow-x: auto;
+    font-size: var(--fontSizeTitles);    /*It's looking this way because of the technical limitations of the calc()*/
+    overflow-x: scroll;
+    text-wrap: wrap;
+
+    width: calc((var(--itemWidth) - var(--elemNumberHeight) - 2.5em) / var(--pFontSize));
+
+    display: flex;
+}
+#templates .templateItem #itemCont #textCont #templateName div{
+    margin-top: auto;
+    word-wrap: break-word;
+    width: 200px !important;
+}
+#templates .templateItem #itemCont #textCont #dividingLine{
+    margin-top: 5px;
+    margin-left: 13px;
+    width: auto;
+    height: 2px;
+    border-radius: 3em;
+    background: var(--dividingLine);
+}
+#templates .templateItem #itemCont #textCont #dateName{
+    margin-left: 14px;
+    margin-top: 2px;
+
+    font-size: var(--fontSizeBasic);
+
+    color: var(--fontColorInsufficient2);
+}
+#templates .templateItem #itemCont #textCont #dateName span{
+    font-weight: 500;
+}
+#templates .templateItem #itemCont #textCont #dateName #date{
+    margin-top: 2px;
+    white-space: nowrap;
+}
+/*Options button*/
+#templates .templateItem #options{
+    position: absolute;
+    right: 4px;
+    top: 6px;
+    height: 25px;
+    width: 25px;
+    cursor: pointer;
+
+    background: none;
+    border: none;
+
+    display: none;
+}
+#templates .templateItem #options img{
+    height: 25px;
+    width: 25px;
+    z-index: 16;
+    transition: 0.3s;
+
+    filter: brightness(0) saturate(100%) invert(92%) sepia(3%) saturate(14%) hue-rotate(75deg) brightness(80%) contrast(87%);
+}
+#templates .templateItem #options img:hover{
+    filter: brightness(0) saturate(100%) invert(23%) sepia(8%) saturate(12%) hue-rotate(322deg) brightness(97%) contrast(82%);
+}
+#templates .templateItem #options.active{
+    display: block;
+}
+/*Options menu*/
+#templates .templateItem #optionsMenu{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    right: -90px;
+    top: 32px;
+
+    padding-top: 6px;
+    padding-bottom: 6px;
+
+    display: none;
+
+    height: fit-content;
+    width: fit-content;
+    background-color: var(--optionsMenuColor);
+    border: none;
+    border-radius: 3px;
+
+    z-index: 21;
+
+    box-shadow: 1px 1px 0.45em 1px var(--localShadowBox), 
+    -1px -1px 0.45em 1px var(--localShadowBox);
+}
+/*#templates .templateItem:last-child #optionsMenu{   //use that later
+    right: 90px;
+    top: -32px;
+}*/
+#templates .templateItem #optionsMenu div{
+    display: flex;
+    flex-direction: column;
+}
+#templates .templateItem #optionsMenu.active{
+    display: flex;
+}
+#templates .templateItem #optionsMenu div #dividingLine{
+    margin: 4px;
+    margin-left: 6px;
+    margin-right: 9px;
+    height: 1px;
+    border-radius: 5px;
+    background-color: var(--dividingLine);
+    opacity: 0.6;
+}
+#templates .templateItem #optionsMenu button{
+    padding: 4px;
+    padding-left: 5px;
+    padding-right: 9px;
+
+    background-color: var(--backgroundColorMain);
+    border: none;
+    border-radius: 0;
+
+    text-align: start;
+}
+#templates .templateItem #optionsMenu button:hover{
+    background-color: var(--optionsMenuColorHover);
+}
+#templates .templateItem #optionsMenu button:first-child{
+    border-radius: 0 3px 0 0;
+}
+#templates .templateItem #optionsMenu button:last-child{
+    border-radius: 0 0 3px 0;
+}
+#templates .templateItem #optionsMenu button img{
+    height: 18px;
+    position: relative;
+    top: 2px;
+    margin-right: 5px;
+}
+#templates .templateItem #optionsMenu button span{
+    margin-bottom: 9px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*maybe usefull
+#templates ::-webkit-scrollbar {
+
+    width: 80%;
+    height: 14px;
+    padding: 0 10px;
+}
+#templates ::-webkit-scrollbar-track {
+    border-radius: 8px;
+    background-color: var(--scrollbarTrackColor);
+    box-shadow: inset 0 0 6px var(--colorShadowBox);
+}
+#templates ::-webkit-scrollbar-thumb {
+    min-width: 160px;
+    border-radius: 8px;
+    background-color: var(--scrollbarThumbColor);
+}
+*/

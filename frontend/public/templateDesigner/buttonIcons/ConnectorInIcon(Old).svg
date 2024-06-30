@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="256px" height="256px" viewBox="0 0 512 512" version="1.1" fill="#000000" xmlns="http://www.w3.org/2000/svg">
+  <defs/>
+  <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+  <g id="SVGRepo_iconCarrier" style="" transform="matrix(1.144867, 0, 0, 1.219245, -54.472807, -71.577747)">
+    <title>data-ingress</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+      <g id="add" fill="#000000" transform="translate(64.000000, 85.333333)">
+        <path d="M 226.913 -18.017 L 403.602 82.821 L 404.044 284.498 L 227.8 385.336 L 51.111 284.498 L 51.001 234.079 L 101.922 234.079 L 101.968 255.356 L 227.672 327.102 L 353.034 255.356 L 352.719 111.938 L 227.041 40.193 L 101.653 111.938 L 101.699 133.241 L 50.779 133.241 L 50.669 82.821 L 226.913 -18.017 Z M 194.557 90.206 L 288.217 183.66 L 194.968 277.115 L 159.237 241.463 L 191.747 208.869 L 2.512 209.688 L 1.964 158.45 L 191.637 158.45 L 158.985 125.857 L 194.557 90.206 Z" id="Combined-Shape" style="transform-origin: 202.921px 183.66px;"/>
+      </g>
+    </g>
+  </g>
+</svg>

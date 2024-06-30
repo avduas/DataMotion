@@ -1,0 +1,53 @@
+#newTemplate{
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 2.9em);
+    height: calc(100vh - 3em);
+
+    position: absolute;
+    left: 2.8em;
+}
+#newTemplate #innerHeader{
+    border-bottom: solid 1px var(--dividingLine);
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background-color: var(--backgroundColorMain);
+
+    position: absolute;
+    top: calc(var(--innerHeaderHeight) + 0.3em);
+    z-index: 30;
+
+    font-size: 2em;
+
+    font-size: 1.7em;
+    height: var(--innerHeaderHeight);
+}
+#newTemplate #innerHeader p{
+    margin-left: 1.15em;
+}
+#newTemplate #innerHeader p input{
+    padding-left: 0.15em;
+    font-size: 0.9em;
+    border: none;
+    background: none;
+}
+#newTemplate #mainCont{
+    padding: 0.6em;
+    height: calc(100vh - var(--innerHeaderHeight));
+
+    overflow: scroll;
+
+    display: flex;
+    flex-direction: column;
+}
+#newTemplate #designField{
+    position: absolute;
+    top: calc(var(--mainHeaderHeight) + var(--innerHeaderHeight) + 1em);
+    height: calc(100% - var(--innerHeaderHeight) - 1em);
+    width: calc(100% - 0.5em);
+}
+
+#newTemplate ::-webkit-scrollbar{
+    display: none;
+}

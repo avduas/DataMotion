@@ -1,0 +1,571 @@
+:root{  /*put here all variables that you would need only on that page, not in app.css*/
+
+    --routerMenuHeight : 600px;
+    --routerMenuWidth : 540px;
+
+    --colorShadowBoxRouter : #cfcfcf;
+    --isertTextareaBackground : #fdfcfc;
+
+    --reviseTHBackgroundSelected : #bbc7f4;
+    --reviseTHFontColorNonActive : #a2a2a2;
+
+    --sourceOptImgHeight : 90px;
+    --sourceOptImgWidht : 90px;
+}
+
+/*General page overlay (In fact, it's mostly universal for most of the pages, you don't need to change anything there)*/
+/*But if it would occures that you need to, ask me first*/
+#newDataRoute{
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 2.9em);
+
+    position: absolute;
+    left: 2.8em;
+    top: var(--mainHeaderHeight);
+}
+#newDataRoute #innerHeader{
+    border-bottom: solid 1px var(--dividingLine);
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    background-color: var(--backgroundColorMain);
+
+    position: absolute;
+    top: 0;
+    z-index: 30;
+
+    width: 100%;
+
+    font-size: 1.7em;
+    height: var(--innerHeaderHeight);;
+    justify-self: center;
+}
+#newDataRoute #innerHeader p{
+    margin-top: 0.1em;
+    margin-left: 1.15em;
+}
+#newDataRoute #mainCont{
+    position: absolute;
+    top: calc(var(--innerHeaderHeight) + 1em);
+    left: 0.5em;
+
+    width: 99.5%;
+    height: calc(91vh - var(--innerHeaderHeight));
+
+    overflow: scroll;
+}
+/*Custom scrollbar*/
+/*#newDataRoute ::-webkit-scrollbar{
+    display: none;
+}*/
+#newDataRoute #mainCont::-webkit-scrollbar{
+    display: block;
+    width: var(--customScrollbarWidth);
+}
+#newDataRoute #mainCont::-webkit-scrollbar-track{
+    background-color: var(--scrollbarTrackColor);
+    width: var(--customScrollbarWidth);
+}
+#newDataRoute #mainCont::-webkit-scrollbar-thumb{
+    background-color: var(--scrollbarThumbColor);
+    width: var(--customScrollbarWidth);
+    min-height: 1em;
+}
+#newDataRoute #mainCont::-webkit-scrollbar-thumb:active{
+    background-color: var(--scrollbarThumbColorActive);
+    width: var(--customScrollbarWidth);
+}
+#newDataRoute #mainCont::-webkit-scrollbar:horizontal{
+    display: none;
+}
+/*routeCont*/
+#newDataRoute #routeCont{
+    min-width: fit-content;
+    min-height: fit-content;
+    height: calc(var(--routerMenuHeight));
+    width: calc(var(--routerMenuWidth));
+    padding: 18px;
+    margin: auto;
+    margin-top: 15px;
+
+    border-radius: 5px;
+
+    box-shadow: 1px 1px 4px 0.5px var(--colorShadowBoxRouter), 
+    -1px -1px 4px 0.5px var(--colorShadowBoxRouter);
+
+    display: flex;
+    flex-direction: column;
+}
+#newDataRoute #routeCont p{
+    margin-left: 20px;
+    font-size: var(--fontSizeTitles);
+}
+#newDataRoute #routeCont p div{
+    padding-left: 3px;
+    padding-top: 2px;
+    font-size: var(--fontSizeTitles);
+}
+#newDataRoute #routeCont p input{
+    padding-left: 3px;
+    padding-top: 2px;
+    font-size: var(--fontSizeTitles);
+    border: none;
+    border-radius: 4px;
+    background: none;
+    font-family: Roboto;
+}
+#newDataRoute #routeCont p input.err{
+    border: 1px solid var(--inputBorderErr);
+    background-color: var(--inputBackgroundErr);
+    outline: none;
+}
+#newDataRoute #routeCont #dividingLine{
+    margin-top: 7px;
+    margin-left: 13px;
+    width: auto;
+    height: 1.2px;
+    border-radius: 15px;
+    background: var(--dividingLine);
+}
+/*Insertion component*/
+/*Insert container*/
+#newDataRoute #insertCont{
+    margin-top: 21px;
+    display: flex;
+    flex-direction: column;
+}
+#newDataRoute #insertCont #firstStr{
+    display: flex;
+    flex-direction: row;
+}
+#newDataRoute #insertCont p{
+    font-size: var(--fontSizeBasic);
+    margin-left: 23px;
+    margin-top: 2px;
+    color: var(--fontColorInsufficient3);
+}
+#newDataRoute #insertCont #dividingLine{
+    height: 1px;
+    margin-top: 3px;
+}
+#newDataRoute #insertCont #firstStr #pFormat{
+    margin-left: auto;
+    margin-right: 5px;
+}
+#newDataRoute #insertCont #firstStr #selectFormat{
+    margin-right: 20px;
+}
+#newDataRoute #insertCont #firstStr #selectFormat select{
+    font-size: var(--fontSizeBasic);
+    padding: 3px;
+    border-radius: 3px;
+}
+#newDataRoute #insertCont #firstStr #selectFormat select option{
+    border-radius: none;
+}
+/*Sample insert textarea*/
+#newDataRoute #insertCont textarea{
+    width: calc(100% - 40px);
+    margin-left: 18px;
+    margin-top: 5px;
+    padding: 9px;
+    height: 320px;
+    border-radius: 3px;
+    resize: none;
+    background-color: var(--isertTextareaBackground);
+}
+#newDataRoute #insertCont textarea.err{
+    border: 1px solid var(--inputBorderErr);
+    background-color: var(--inputBackgroundErr);
+    outline: none;
+}
+#newDataRoute #insertCont textarea::-webkit-scrollbar{
+    display: block;
+    width: 16px;
+}
+#newDataRoute #insertCont textarea::-webkit-scrollbar-track{
+    background-color: none;
+    width: 0px;
+}
+#newDataRoute #insertCont textarea::-webkit-scrollbar-thumb{
+    background-color: var(--scrollbarThumbColor);
+    min-height: 60px;
+    border-radius: 5px;
+    border: 4px solid var(--isertTextareaBackground);
+    background-clip: padding-box;
+}
+#newDataRoute #insertCont textarea.err::-webkit-scrollbar-thumb{
+    border: 4px solid var(--inputBackgroundErr);
+}
+#newDataRoute #insertCont textarea::-webkit-scrollbar-thumb:active{
+    background-color: var(--scrollbarThumbColorActive);
+    width: 5px;
+}
+#newDataRoute #insertCont textarea::-webkit-scrollbar:horizontal{
+    display: none;
+}
+#newDataRoute #insertCont textarea:focus{
+    outline: 1px solid var(--fontColorMain);
+}
+#newDataRoute #insertCont #errMes{
+    margin-top: 7px;
+    color : var(--inputBorderErr);
+    margin-left: 20px;
+    font-weight: 500;
+}
+#newDataRoute #insertCont #errMes #mes{
+    text-decoration: underline;
+    font-weight: 400;
+
+}
+/*Buttons*/
+#newDataRoute button{
+    padding: 9px 30px 9px 30px;
+
+    font-size: var(--fontSizeBasic);
+
+    border: none;
+    border-radius: 5px;
+
+    color: var(--backgroundColorMain);
+    font-weight: 600;
+    background: var(--buttonCreateBackgroundColor);
+    transition: all 0.3s;
+    border: 1px solid var(--colorShadowBox);
+
+    box-shadow: 2px 2px 0.5em 0.01em var(--colorShadowBox);
+}
+
+#newDataRoute button:hover{
+    color: var(--buttonCreateBackgroundColor);
+    background: var(--backgroundColorMain);
+    border: 1px solid var(--buttonCreateBackgroundColor);
+}
+#newDataRoute #buttonCont{
+    display: flex;
+    flex-direction: row;
+    margin-top: auto;
+}
+#newDataRoute button#continue{
+    margin-left: auto;
+}
+#newDataRoute button#back{
+    margin-right: auto;
+}
+/*Revision*/
+#newDataRoute #reviseCont{
+    margin-top: 0px;
+    display: flex;
+    flex-direction: column;
+}
+#newDataRoute #reviseCont #firstStr{
+    display: flex;
+    flex-direction: row;
+}
+#newDataRoute #reviseCont p{
+    font-size: var(--fontSizeTitles);
+    margin-left: 23px;
+    margin-top: 2px;
+    color: var(--fontColorInsufficient3);
+}
+#newDataRoute #reviseCont #dividingLine{
+    height: 1px;
+    margin-top: 3px;
+}
+/*Data preview table*/
+#newDataRoute #reviseCont #dataPreview{
+    display: block;
+    height: 250px;
+    width: calc(var(--routerMenuWidth) - 15px);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    border: 1.5px solid var(--dividingLine);
+    border-radius: 5px;
+}
+#newDataRoute #reviseCont #dataPreview p{
+    position: relative;
+    top: -10.5px;
+    background-color: var(--backgroundColorMain);
+    width: fit-content;
+    font-size: var(--fontSizeBasic);
+    padding-left: 9px;
+    padding-right: 9px;
+}
+#newDataRoute #reviseCont #dataPreview #tableCont{
+    position: relative;
+    top: -9px;
+
+    width: calc(100% - 14px);
+    height: calc(100% - 18px);
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 1px;
+    background-color: var(--backgroundColorMain);
+
+    overflow: scroll;
+}
+#newDataRoute #reviseCont #dataPreview table{
+    background-color: var(--isertTextareaBackground);
+    border-spacing: 0px;
+}
+/*///////////////////////////////Table scrollbar////////////////////////////*/
+/*#newDataRoute #reviseCont #dataPreview #tableCont::-webkit-scrollbar{
+    display: block;
+}
+#newDataRoute #reviseCont #dataPreview #tableCont::-webkit-scrollbar-track{
+    background-color: var(--backgroundColorMain);
+    width: 5px;
+}
+#newDataRoute #reviseCont #dataPreview #tableCont::-webkit-scrollbar-thumb{
+    background-color: var(--scrollbarThumbColor);
+    min-height: 35px;
+    border-radius: 3px;
+    width: 5px;
+    background-clip: padding-box;
+}
+#newDataRoute #reviseCont #dataPreview #tableCont.err::-webkit-scrollbar-thumb{
+    border: 4px solid var(--inputBackgroundErr);
+}
+#newDataRoute #reviseCont #dataPreview #tableCont::-webkit-scrollbar-thumb:active{
+    background-color: var(--scrollbarThumbColorActive);
+    width: 5px;
+}*/
+/*//////////////////////////////////////////////////////////////*/
+#newDataRoute #reviseCont #dataPreview thead{
+    
+}
+#newDataRoute #reviseCont #dataPreview thead th{
+    border: 1px solid black;
+    position: sticky;
+    top: 0px;
+    background-color: var(--isertTextareaBackground);
+    padding: 5px;
+    cursor: pointer;
+}
+#newDataRoute #reviseCont #dataPreview thead th.selected{
+    color: var(--isertTextareaBackground);
+    background-color: var(--reviseTHBackgroundSelected);
+}
+#newDataRoute #reviseCont #dataPreview thead th.nonActive{
+    color: var(--reviseTHFontColorNonActive);
+}
+#newDataRoute #reviseCont #dataPreview thead th:hover{
+    color: var(--isertTextareaBackground);
+    background-color: var(--reviseTHBackgroundSelected);
+}
+#newDataRoute #reviseCont #dataPreview tbody tr td{
+    border: 1px solid black;
+    color: var(--fontColorInsufficient3);
+    font-size: var(--fontSizeBasic);
+    padding: 2px;
+}
+/*Edition interface*/
+#newDataRoute #reviseCont #editCont{
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+}
+#newDataRoute #reviseCont #nameChange{
+    display: flex;
+    flex-direction: row;
+}
+#newDataRoute #reviseCont #nameChange p{
+    font-size: var(--fontSizeBasic);
+    text-wrap: nowrap;
+}
+#newDataRoute #reviseCont #nameChange input{
+    height: fit-content;
+    font-size: var(--fontSizeBasic);
+    margin-left: 3px;
+    width: 145px;
+}
+
+#newDataRoute #reviseCont #typeChange{
+    position: relative;
+    top: 4px;
+    display: block;
+    border: 1.5px solid var(--dividingLine);
+    border-radius: 5px;
+    padding: 5px;
+    padding-left: 7px;
+    margin-left: auto;
+    margin-right: 9px;
+}
+#newDataRoute #reviseCont #typeChange p{
+    font-size: var(--fontSizeBasic);
+    position: relative;
+    top: -11.5px;
+    margin-left: 9px;
+    padding-left: 5px;
+    padding-right: 3px;
+    background-color: var(--backgroundColorMain);
+    width: fit-content;
+}
+#newDataRoute #reviseCont #typeChange #radioInputs{
+    position: relative;
+    top: -9px;
+    display: flex;
+    flex-direction: column;
+}
+#newDataRoute #reviseCont #typeChange #radioInputs div{
+    margin-bottom: 3px;
+}
+#newDataRoute #reviseCont #typeChange #radioInputs div input{
+    position: relative;
+    top: 2px;
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+}
+#newDataRoute #reviseCont #typeChange #radioInputs div label{
+    font-size: var(--fontSizeBasic);
+    margin-left: 4px;
+    text-wrap: wrap;
+}
+#newDataRoute #reviseCont #typeChange #radioInputs #applyButton{
+    width: 100%;
+    height: 1px;
+}
+#newDataRoute #reviseCont #typeChange #radioInputs #applyButton button{
+    font-size: var(--fontSizeBasic);
+    padding: 5px;
+    position: relative;
+    top: 5px;
+    left: 80px;
+}
+/*Configuration*/
+#newDataRoute #configCont{
+
+}
+#newDataRoute #configCont #firstStr p{
+    font-size: var(--fontSizeBasic);
+    margin-left: 23px;
+    margin-top: 8px;
+    color: var(--fontColorInsufficient3);
+}
+#newDataRoute #configCont #optCont{
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+    margin-left: 16px;
+    margin-top: 9px;
+}
+#newDataRoute #configCont #optCont .option{
+    padding: 3px;
+    cursor: pointer;
+    transition: background-color 0.5s;
+}
+#newDataRoute #configCont #optCont .option.active{
+    outline: 2px solid var(--dividingLine);
+    border-radius: 5px;
+    background-color: var(--isertTextareaBackground);
+}
+#newDataRoute #configCont #optCont .option:hover{
+    outline: 2px solid var(--dividingLine);
+    border-radius: 5px;
+    background-color: var(--isertTextareaBackground);
+}
+#newDataRoute #configCont #optCont .option img{
+    width: var(--sourceOptImgWidht);
+    height: var(--sourceOptImgHeight);
+}
+#newDataRoute #configCont #optCont .option div{
+    width: var(--sourceOptImgWidht);
+    text-align: center;
+}
+#newDataRoute #configCont #inputs{
+    display: flex;
+    flex-direction: column;
+}
+#newDataRoute #configCont #inputs .inputStr{
+    display: flex;
+    flex-direction: row;
+    margin-top: 15px;
+}
+#newDataRoute #configCont #inputs .inputStr div{
+    font-size: var(--fontSizeTitles);
+}
+#newDataRoute #configCont #inputs .inputStr input{
+    margin-left: auto;
+    margin-right: 45px;
+    width: calc(100% - 229px);
+    background-color: var(--isertTextareaBackground);
+    border: 1px solid var(--dividingLine);
+    padding: 3px;
+    padding-left: 5px;
+    font-size: var(--fontSizeBasic);
+    font-family: roboto;
+    border-radius: 3px;
+}
+#newDataRoute #configCont #inputs .inputStr input:focus{
+    outline: 1.5px solid var(--dividingLine);
+}
+
+
+
+
+
+
+
+
+
+/*Modal*/
+#newDataRoute #modalBody{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 14;
+
+    height: 100%;
+    width: 100%;
+
+    background-color: var(--modalBodyColor);
+    opacity: 0.2;
+}
+#newDataRoute #modal{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 999;
+  
+    margin: auto;
+    margin-top: 150px;
+
+    padding: 25px;
+    padding-top: 8px;
+    padding-left: 15px;
+
+    border-radius: 5px;
+  
+    height: 160px;
+    width: 365px;
+
+    background-color: var(--backgroundColorMain);
+
+    display: flex;
+    flex-direction: column;
+
+    box-shadow: 1px 1px 4px 1px var(--colorShadowBoxRouter), 
+    -1px -1px 4px 1px var(--colorShadowBoxRouter)
+}
+#newDataRoute #modal div#mes{
+    margin-top: 8px;
+    font-size: var(--fontSizeTitles);
+    line-height: 30px;
+}
+#newDataRoute #modal #buttonCont{
+    display: flex;
+    flex-direction: row;
+}
+#newDataRoute #modal #buttonCont #no{
+    margin-right: auto;
+}
+#newDataRoute #modal #buttonCont #yes{
+    margin-left: auto;
+}

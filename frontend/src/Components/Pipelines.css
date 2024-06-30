@@ -1,0 +1,398 @@
+:root {
+  /*put here all variables that you would need only on that page, not in app.css*/
+  --localShadowBox : #d4d4d4;
+  --elemNumberHeightForPipelines : 32px;
+}
+
+/*General page overlay (In fact, it's mostly universal for most of the pages, you don't need to change anything there)*/
+/*But if it would occures that you need to, ask me first*/
+#pipelines {
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 2.9em);
+
+  position: absolute;
+  left: 2.8em;
+  top: var(--mainHeaderHeight);
+}
+#pipelines #innerHeader {
+  border-bottom: solid 1px var(--dividingLine);
+  display: flex;
+  flex-direction: row;
+  width: auto;
+  background-color: var(--backgroundColorMain);
+
+  position: absolute;
+  z-index: 15;
+
+  font-size: 1.7em;
+  height: var(--innerHeaderHeight);
+  width: 100%;
+  justify-self: center;
+}
+#pipelines #innerHeader p {
+  margin-top: 0.1em;
+  margin-left: 1.15em;
+}
+
+#pipelines #innerHeader button:hover{
+  color: var(--buttonCreateBackgroundColor);
+  background: var(--backgroundColorMain);
+  border: 1px solid var(--buttonCreateBackgroundColor);
+}
+
+#pipelines #mainCont {
+  position: absolute;
+  top: calc(var(--innerHeaderHeight) + 1em);
+  left: 0.5em;
+
+  width: 99%;
+  height: calc(91vh - var(--innerHeaderHeight));
+
+  overflow: scroll;
+}
+/*YOUR CODE STARTS HERE, PLEASE, USE #pipelines ID INFRONT OF THE EACH STYLE DESCRIBING BLOCK !*/
+
+#pipelines #pipelinesCont {
+  padding: calc(0.1 * var(--itemHeight));
+
+  justify-content: center;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  display: flex;
+  flex-direction: column;
+
+  max-width: 100%;
+
+  min-width: fit-content;
+
+  overflow-y: scroll;
+}
+
+#pipelines .pipelineItem, #pipelines .rightSide, #pipelines .rightBox, #pipelines .leftBox, #pipelines #leftBox{
+  display: flex;
+  flex-direction: row;
+}
+#pipelines .smallBox, #pipelines #leftSide, #pipelines .rightBox {
+  display: flex;
+  flex-direction: column;
+}
+#pipelines .pipelineItem, #pipelines .rightSide {
+  height: 250px;
+}
+#pipelines .rightSide, #pipelines .smallBox, #pipelines  .rightBox, #pipelines .chartContainer {
+  flex: 1;
+  margin: 0;
+  padding: 0;
+}
+#pipelines .rightBox{
+  height: 250px;
+}
+#pipelines .chartContainer{
+  margin: 11px;
+  margin-bottom: 4px;
+  margin-right: 0px;
+}
+#pipelines .rightBox, #pipelines .leftBox  {
+  justify-content: space-around;
+  background-color: #F5F4F5;
+}
+#pipelines .rightBox, #pipelines .pipelineItem, #pipelines .leftBox, #pipelines .smallBox {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: var(--fontSizeBasic);
+}
+#pipelines .leftBox{
+  font-size: var(--fontSizeTitles);
+}
+#pipelines .smallBox, #pipelines .rightBox{
+  box-sizing: border-box;
+}
+#pipelines .pipelineItem {
+  padding: 10px;
+  background: var(--itemLightTheme);
+  margin-bottom: 20px;
+  margin-left: 10px;
+  box-shadow: 0.45em 1px 0.45em 1px var(--localShadowBox);
+}
+#pipelines .leftBox {
+  height: 96px;
+  width: 314px;
+  color: gray;
+  align-items: center; 
+  justify-content: center;
+  text-align: center;
+}
+#pipelines .rightBox {
+  margin-left: 14px;  
+  background: var(--itemLightTheme);
+  width: 100%;
+}
+#pipelines .rightSide{
+  margin-left: 0px;
+}
+#pipelines .smallBox, #pipelines #leftSide {
+  justify-content: space-between;
+}
+#pipelines .smallBox {
+  width: 100%;
+  height: 100%;
+  background-color: #F5F4F5;
+}
+#pipelines .smallBox {
+  color: gray;
+}
+#pipelines .smallBox span {
+  font-size: var(--fontSizeTitles);
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  margin-top: 10px; 
+  height: 100%;
+}
+#pipelines .smallBox + .smallBox{
+  margin-left: 10px;
+}
+#pipelines #leftBox{
+  height: 87px;
+}
+#pipelines .chartTitle {
+  display: flex;
+  align-items: center;
+  font-size: var(--fontSizeBasic);
+  margin-right: 20px;
+  font-weight: 500;
+
+  position: relative;
+  bottom: 1px;
+  left: 9px;
+}
+/* some extra corrections */
+#pipelines span#bytesIn{
+  color: #0039AB;
+}
+#pipelines span#bytesOut{
+  color: #EF6400;
+}
+#pipelines .chartTitle{
+  line-height: 6px;
+}
+#pipelines .chartTitle div, #pipelines .chartTitle span{
+  padding-left: 3px;
+  padding-right: 5px;
+  background-color: var(--itemLightTheme);
+}
+/* ////////////////////////////// */
+#pipelines .chartTitle .out {
+  color: black; 
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#pipelines .chartTitle .edge, #pipelines .chartTitle .edge1 {
+  margin-left: auto;
+  color: #0039AB; 
+  white-space: nowrap;
+  padding-left: 6px;
+  padding-right: 2px;
+}
+#pipelines .chartTitle .edge1 {
+  color: #EF6400;
+}
+
+#pipelines #innerHeader button{
+  padding: 0em 1.5em 0em 1.5em;
+  /*height: 80%;
+  align-self: center;
+  margin-left: auto;
+  margin-right: 3em;*/
+  height: 2.3em;
+  position: absolute;
+  right: 11em;
+  top: calc(var(--innerHeaderHeight) + 0.1em);
+
+  border: none;
+  border-radius: 0.3em;
+
+  color: var(--backgroundColorMain);
+  font-weight: 600;
+  background: var(--buttonCreateBackgroundColor);
+  transition: all 0.3s;
+  border: 1px solid var(--colorShadowBox);
+
+  box-shadow: 2px 2px 0.5em 0.01em var(--colorShadowBox);
+}
+
+#pipelines ::-webkit-scrollbar{
+  display: none;
+}
+
+/*THERE YOU WOULD WRITE A CODE ASSOCIATED WITH SPECIFIC CHILD ELEMENT CALLED <<PipelineItem>>, USING CLASSNAME .pipelineItem*/
+/*Pipeline Item*/
+#pipelines .pipelineItem{
+  padding: 16px;
+}
+
+/*Something new from Ivan*/
+  /* Boxes-rewrite */
+#pipelines .pipelineItem #pipelineName{
+  height: 70px;
+  width: 314px;
+  color: var(--fontColorInsufficient3);
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: var(--itemLightTheme);
+
+  border: none;
+}
+  /* TemplateInfo */
+#pipelines .pipelineItem #templateInfo{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-top: 3px;
+  margin-bottom: 7px;
+
+  border: 1px solid var(--dividingLine);
+  border-radius: 4px;
+}
+#pipelines .pipelineItem #templateInfo #templateInfoTitle{
+  position: absolute;
+  background-color: var(--itemLightTheme);
+  width: fit-content;
+  top: -8px;
+  left: 4px;
+  z-index: 15;
+  font-weight: 500;
+  padding-left: 2px;
+  padding-right: 4px;
+}
+#pipelines .pipelineItem #templateInfo #row{
+  display: flex;
+  flex-direction: row;
+  margin-top: 8px;
+  margin-left: 5px;
+  padding: 9px;
+  padding-bottom: 12px;
+
+  overflow-x: hidden;
+  white-space: nowrap;
+
+  opacity: 0.7;
+}
+#pipelines .pipelineItem #templateLink{
+  align-self: center;
+  margin-left: 9px;
+  font-size: var(--fontSizeMiddle);
+  text-decoration: underline;
+  cursor: pointer;
+  color: #637bab;
+}
+#pipelines .pipelineItem #templateLink:hover{
+  color: #204082;
+}
+  /* Stats info*/
+#pipelines .pipelineItem #stats{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  
+  width: 100%;
+  justify-content: space-evenly;
+
+  border: 1px solid var(--dividingLine);
+  border-radius: 4px;
+  padding: 4px;
+  padding-top: 6px;
+}
+#pipelines .pipelineItem #stats #statsTitle{
+  position: absolute;
+  background-color: var(--itemLightTheme);
+  width: fit-content;
+  top: -8px;
+  left: 4px;
+  z-index: 15;
+  font-weight: 500;
+  padding-left: 2px;
+  padding-right: 4px;
+}
+#pipelines .pipelineItem #stats div.statBox{
+  display: flex;
+  flex-direction: column;
+  width: 75px;
+  margin-right: 16px;
+}
+#pipelines .pipelineItem #stats div.clusterStat{
+  margin-top: 10px;
+  align-self: center;
+  font-weight: 500;
+  font-size: var(--fontSizeTitles);
+}
+#pipelines .pipelineItem #stats div.clusterStat#bytesIn{
+  color: #0039AB;
+}
+#pipelines .pipelineItem #stats div.clusterStat#bytesOut{
+  color: #EF6400;
+}
+#pipelines .pipelineItem #stats #clusterLabel{
+  margin-top: 4px;
+  margin-right: auto;
+  margin-left: auto;
+
+  position: relative;
+  right: 3px;
+
+  white-space: nowrap;
+
+  color: var(--fontColorInsufficient);
+}
+#pipelines .pipelineItem #stats{
+
+}
+/*Number of elements*/
+#pipelines .pipelineItem #numbOfElem{
+  height: var(--elemNumberHeightForPipelines);
+  width: var(--elemNumberHeightForPipelines);
+
+  display: block;
+  position: relative;
+  top: 0;
+  margin-left: 3px;
+}
+#pipelines .pipelineItem #numbOfElem img{
+  height: var(--elemNumberHeightForPipelines);
+  width: var(--elemNumberHeightForPipelines);
+}
+#pipelines .pipelineItem:nth-of-type(1n) #numbOfElem img, #pipelines .pipelineItem:nth-of-type(1n) #numbOfElem span, #pipelines .pipelineItem:nth-of-type(1n) #templateLink{                  /*for coloring list elements pseudo-markers in Task stats*/
+  filter: brightness(0) saturate(100%) invert(8%) sepia(90%) saturate(5591%) hue-rotate(257deg) brightness(96%) contrast(88%);
+}
+#pipelines .pipelineItem:nth-of-type(2n) #numbOfElem img, #pipelines .pipelineItem:nth-of-type(2n) #numbOfElem span, #pipelines .pipelineItem:nth-of-type(2n) #templateLink{
+  filter: brightness(0) saturate(100%) invert(53%) sepia(89%) saturate(5606%) hue-rotate(315deg) brightness(90%) contrast(92%);
+}
+#pipelines .pipelineItem:nth-of-type(3n) #numbOfElem img, #pipelines .pipelineItem:nth-of-type(3n) #numbOfElem span, #pipelines .pipelineItem:nth-of-type(3n) #templateLink{
+  filter: brightness(0) saturate(100%) invert(54%) sepia(91%) saturate(402%) hue-rotate(127deg) brightness(90%) contrast(91%);
+}
+#pipelines .pipelineItem:nth-of-type(4n) #numbOfElem img, #pipelines .pipelineItem:nth-of-type(4n) #numbOfElem span, #pipelines .pipelineItem:nth-of-type(4n) #templateLink{
+  filter: brightness(0) saturate(100%) invert(27%) sepia(28%) saturate(4806%) hue-rotate(266deg) brightness(92%) contrast(96%);
+}
+#pipelines .pipelineItem:nth-of-type(5n) #numbOfElem img, #pipelines .pipelineItem:nth-of-type(5n) #numbOfElem span, #pipelines .pipelineItem:nth-of-type(5n) #templateLink{
+  filter: brightness(0) saturate(100%) invert(75%) sepia(17%) saturate(1287%) hue-rotate(166deg) brightness(91%) contrast(93%);
+}
+#pipelines .pipelineItem #numbOfElem div{
+  position: absolute;
+  font-size: calc(var(--elemNumberHeightForPipelines) / 3);
+  font-weight: 1000;
+  top: 30%;
+  transform: translateY(-50%);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 15;
+  background-color: #ffffff;
+  padding: 0px 4px 0px 4px;
+  border-radius: 3px;
+}

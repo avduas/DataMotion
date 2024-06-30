@@ -1,0 +1,355 @@
+:root{  /*put here all variables that you would need only on that page, not in app.css*/
+    --itemModelHeight : 120px;
+    --itemModelWidth : 305px;
+    --itemFont : 1em;
+    --elemNumberHeight : 5em;
+    --pFontSize : 1.4;
+
+    --optionsMenuColor : var(--backgroundColorMain);
+    --optionsMenuColorHover : #e8e8e8;
+
+    --localShadowBox : #d4d4d4;
+}
+
+/*General page overlay (In fact, it's mostly universal for most of the pages, you don't need to change anything there)*/
+/*But if it would occures that you need to, ask me first*/
+#dataRoutes{
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 2.9em);
+
+    position: absolute;
+    left: 2.8em;
+    top: var(--mainHeaderHeight);
+}
+#dataRoutes #innerHeader{
+    border-bottom: solid 1px var(--dividingLine);
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    background-color: var(--backgroundColorMain);
+
+    position: absolute;
+    top: 0;
+    z-index: 30;
+
+    width: 100%;
+
+    font-size: 1.7em;
+    height: var(--innerHeaderHeight);;
+    justify-self: center;
+}
+#dataRoutes #innerHeader p{
+    margin-top: 0.1em;
+    margin-left: 1.15em;
+}
+#dataRoutes #innerHeader button{
+    padding: 0em 1.5em 0em 1.5em;
+    /*height: 80%;
+    align-self: center;
+    margin-left: auto;
+    margin-right: 3em;*/
+    height: 2.3em;
+    position: absolute;
+    right: 11em;
+    top: calc(var(--innerHeaderHeight) + 0.1em);
+
+    border: none;
+    border-radius: 0.3em;
+
+    color: var(--backgroundColorMain);
+    font-weight: 600;
+    background: var(--buttonCreateBackgroundColor);
+    transition: all 0.3s;
+    border: 1px solid var(--colorShadowBox);
+
+    box-shadow: 2px 2px 0.5em 0.01em var(--colorShadowBox);
+}
+#dataRoutes #innerHeader button:hover{
+    color: var(--buttonCreateBackgroundColor);
+    background: var(--backgroundColorMain);
+    border: 1px solid var(--buttonCreateBackgroundColor);
+}
+#dataRoutes #mainCont{
+    position: absolute;
+    top: calc(var(--innerHeaderHeight) + 1em);
+    left: 0.5em;
+
+    width: 99.5%;
+    height: calc(91vh - var(--innerHeaderHeight));
+
+    overflow: scroll;
+}
+
+#dataRoutes ::-webkit-scrollbar{
+    display: none;
+}
+
+/*YOUR CODE STARTS HERE, PLEASE, USE #templates ID INFRONT OF THE EACH STYLE DESCRIBING BLOCK !*/
+
+#dataRoutes #routesCont{
+    padding: calc(0.1 * var(--itemModelHeight));
+
+    justify-content: left;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    max-width: 100%;
+    height: fit-content;
+    min-width: fit-content;
+    padding-bottom: 50px;
+
+    overflow-y: scroll;
+    row-gap: calc(0.12 * var(--itemModelHeight));
+    column-gap: calc(0.23 * var(--itemModelWidth) - (4.5vw));
+}
+@media (min-width: 1260px) {
+    #dataRoutes #routesCont{
+        column-gap: calc(0.035 * var(--itemModelWidth) + (1.35vw));
+    }
+}
+/*Custom scrollbar*/
+#dataRoutes ::-webkit-scrollbar{
+    display: none;
+}
+#dataRoutes #mainCont::-webkit-scrollbar{
+    display: block;
+    width: var(--customScrollbarWidth);
+}
+#dataRoutes #mainCont::-webkit-scrollbar-track{
+    background-color: var(--scrollbarTrackColor);
+    width: var(--customScrollbarWidth);
+}
+#dataRoutes #mainCont::-webkit-scrollbar-thumb{
+    background-color: var(--scrollbarThumbColor);
+    width: var(--customScrollbarWidth);
+    min-height: 1em;
+}
+#dataRoutes #mainCont::-webkit-scrollbar-thumb:active{
+    background-color: var(--scrollbarThumbColorActive);
+    width: var(--customScrollbarWidth);
+}
+#dataRoutes #mainCont::-webkit-scrollbar:horizontal{
+    display: none;
+}
+
+/*THERE YOU WOULD WRITE A CODE ASSOCIATED WITH SPECIFIC CHILD ELEMENT CALLED <<routeItem>>, USING CLASSNAME .routeItem*/
+/*Template Item*/
+
+#dataRoutes .routeItem{
+    /*padding: calc( 0.1 * var(--itemModelHeight));*/
+    background: var(--itemLightTheme);
+    min-width: fit-content;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.25em;
+    padding-left: 9px;
+    padding-right: 5px;
+
+    height: var(--itemModelHeight);
+    width: var(--itemModelWidth);
+
+    box-shadow: 1px 1px 0.45em 1px var(--localShadowBox), 
+    -1px -1px 0.45em 1px var(--localShadowBox);
+}
+#dataRoutes .routeItem:hover{
+    box-shadow: 1px 1px 0.45em 0.05em var(--colorShadowBox), 
+    -1px -1px 0.45em 0.05em var(--colorShadowBox);
+}
+#dataRoutes .routeItem #itemCont{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+/*Number of elements*/
+#dataRoutes .routeItem #itemCont #numbOfElem{
+    height: var(--elemNumberHeight);
+    width: var(--elemNumberHeight);
+
+    display: block;
+    position: relative;
+    top: 1.1em;
+}
+#dataRoutes .routeItem #itemCont #numbOfElem img{
+    height: var(--elemNumberHeight);
+    width: var(--elemNumberHeight);
+}
+#dataRoutes .routeItem:nth-of-type(1n) #itemCont #numbOfElem{
+    filter: brightness(0) saturate(100%) invert(8%) sepia(90%) saturate(5591%) hue-rotate(257deg) brightness(96%) contrast(88%);
+}
+#dataRoutes .routeItem:nth-of-type(2n) #itemCont #numbOfElem{
+    filter: brightness(0) saturate(100%) invert(53%) sepia(89%) saturate(5606%) hue-rotate(315deg) brightness(90%) contrast(92%);
+}
+#dataRoutes .routeItem:nth-of-type(3n) #itemCont #numbOfElem{
+    filter: brightness(0) saturate(100%) invert(54%) sepia(91%) saturate(402%) hue-rotate(127deg) brightness(90%) contrast(91%);
+}
+#dataRoutes .routeItem:nth-of-type(4n) #itemCont #numbOfElem{
+    filter: brightness(0) saturate(100%) invert(27%) sepia(28%) saturate(4806%) hue-rotate(266deg) brightness(92%) contrast(96%);
+}
+#dataRoutes .routeItem:nth-of-type(5n) #itemCont #numbOfElem{
+    filter: brightness(0) saturate(100%) invert(75%) sepia(17%) saturate(1287%) hue-rotate(166deg) brightness(91%) contrast(93%);
+}
+#dataRoutes .routeItem #itemCont #numbOfElem div{
+    position: absolute;
+    font-size: calc(var(--elemNumberHeight) / 3);
+    font-weight: 1000;
+    top: 30%;
+    transform: translateY(-50%);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 15;
+}
+/*Main text content*/
+#dataRoutes .routeItem #itemCont #textCont{
+    display: flex;
+    flex-direction: column;
+}
+#dataRoutes .routeItem #itemCont #textCont #routeName{
+    margin-left: 13px;
+    height: 65px;
+    width: auto !important;
+    overflow-x: auto;
+    font-size: var(--fontSizeTitles);    /*It's looking this way because of the technical limitations of the calc()*/
+    overflow-x: scroll;
+    text-wrap: wrap;
+
+    width: calc((var(--itemModelWidth) - var(--elemNumberHeight) - 2.5em) / var(--pFontSize));
+
+    display: flex;
+}
+#dataRoutes .routeItem #itemCont #textCont #routeName div{
+    margin-top: auto;
+    word-wrap: break-word;
+    width: 200px !important;
+}
+#dataRoutes .routeItem #itemCont #textCont #dividingLine{
+    margin-top: 5px;
+    margin-left: 13px;
+    width: auto;
+    height: 2px;
+    border-radius: 3em;
+    background: var(--dividingLine);
+}
+#dataRoutes .routeItem #itemCont #textCont #dateName{
+    margin-left: 14px;
+    margin-top: 2px;
+
+    font-size: var(--fontSizeBasic);
+
+    color: var(--fontColorInsufficient2);
+}
+#dataRoutes .routeItem #itemCont #textCont #dateName span{
+    font-weight: 500;
+}
+#dataRoutes .routeItem #itemCont #textCont #dateName #date{
+    margin-top: 2px;
+    white-space: nowrap;
+}
+/*Options button*/
+#dataRoutes .routeItem #options{
+    position: absolute;
+    right: 4px;
+    top: 6px;
+    height: 25px;
+    width: 25px;
+    cursor: pointer;
+
+    background: none;
+    border: none;
+
+    display: none;
+}
+#dataRoutes .routeItem #options img{
+    height: 25px;
+    width: 25px;
+    z-index: 16;
+    transition: 0.3s;
+
+    filter: brightness(0) saturate(100%) invert(92%) sepia(3%) saturate(14%) hue-rotate(75deg) brightness(80%) contrast(87%);
+}
+#dataRoutes .routeItem #options img:hover{
+    filter: brightness(0) saturate(100%) invert(23%) sepia(8%) saturate(12%) hue-rotate(322deg) brightness(97%) contrast(82%);
+}
+#dataRoutes .routeItem #options.active{
+    display: block;
+}
+/*Options menu*/
+#dataRoutes .routeItem #optionsMenu{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    right: -90px;
+    top: 32px;
+
+    padding-top: 6px;
+    padding-bottom: 6px;
+
+    display: none;
+
+    height: fit-content;
+    width: fit-content;
+    background-color: var(--optionsMenuColor);
+    border: none;
+    border-radius: 3px;
+
+    z-index: 21;
+
+    box-shadow: 1px 1px 0.45em 1px var(--localShadowBox), 
+    -1px -1px 0.45em 1px var(--localShadowBox);
+}
+/*#templates .routeItem:last-child #optionsMenu{   //use that later
+    right: 90px;
+    top: -32px;
+}*/
+#dataRoutes .routeItem #optionsMenu div{
+    display: flex;
+    flex-direction: column;
+}
+#dataRoutes .routeItem #optionsMenu.active{
+    display: flex;
+}
+#dataRoutes .routeItem #optionsMenu div #dividingLine{
+    margin: 4px;
+    margin-left: 6px;
+    margin-right: 9px;
+    height: 1px;
+    border-radius: 5px;
+    background-color: var(--dividingLine);
+    opacity: 0.6;
+}
+#dataRoutes .routeItem #optionsMenu button{
+    padding: 4px;
+    padding-left: 5px;
+    padding-right: 9px;
+    font-size: var(--fontSizeBasic);
+    text-transform: uppercase;
+
+    background-color: var(--backgroundColorMain);
+    border: none;
+    border-radius: 0;
+
+    text-align: start;
+}
+#dataRoutes .routeItem #optionsMenu button:hover{
+    background-color: var(--optionsMenuColorHover);
+}
+#dataRoutes .routeItem #optionsMenu button:first-child{
+    border-radius: 0 3px 0 0;
+}
+#dataRoutes .routeItem #optionsMenu button:last-child{
+    border-radius: 0 0 3px 0;
+}
+#dataRoutes .routeItem #optionsMenu button img{
+    height: 18px;
+    position: relative;
+    top: 2px;
+    margin-right: 5px;
+}
+#dataRoutes .routeItem #optionsMenu button span{
+    margin-bottom: 9px;
+}

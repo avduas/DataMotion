@@ -1,0 +1,44 @@
+#settings{
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 2.9em);
+
+    position: absolute;
+    left: 2.8em;
+    top: var(--mainHeaderHeight);
+}
+#settings #innerHeader{
+    border-bottom: solid 1px var(--dividingLine);
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    background-color: var(--backgroundColorMain);
+
+    position: absolute;
+    top: 0;
+    z-index: 30;
+
+    width: 100%;
+
+    font-size: 1.7em;
+    height: var(--innerHeaderHeight);;
+    justify-self: center;
+}
+#settings #innerHeader p{
+    margin-top: 0.1em;
+    margin-left: 1.15em;
+}
+#settings #mainCont{
+    position: absolute;
+    top: calc(var(--innerHeaderHeight) + 1em);
+    left: 0.5em;
+
+    width: 99.5%;
+    height: calc(91vh - var(--innerHeaderHeight));
+
+    overflow: scroll;
+}
+
+#settings ::-webkit-scrollbar{
+    display: none;
+}

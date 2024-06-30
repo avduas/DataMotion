@@ -1,0 +1,86 @@
+/*for common features*/
+:root{
+    --colorControlButtonBackground : #ffffff;
+    --colorControlBorder: #eeeeee;
+
+    --customControlButtonImgHeight : 2.1;
+}
+/*ControlsNodes*/
+#controlsNodes{
+    display: flex;
+    flex-direction: row;
+
+    position: absolute;
+    left: 17em;
+    top: 0.5em;
+
+    z-index: 15;
+
+    background: var(--colorControlBorder);
+    padding: 0.05em;
+
+    box-shadow: 0px 0px 0.2em 0.005em var(--colorShadowBox),
+    0px 0px 0.1em 0.005em var(--colorShadowBox);
+}
+#controlsNodes div{
+    width: auto;
+    padding: 0.05em;
+
+}
+#controlsNodes button{
+    border: none;
+    padding: 0;
+}
+#controlsNodes img{
+    height: calc(1em * var(--customControlButtonImgHeight));
+    padding: 0.1em;
+}
+#controlsNodes button{
+    width: auto;
+    background-color: var(--colorControlButtonBackground);
+
+    padding: 0.5em;
+
+}
+#controlsNodes button:hover{
+    background-color: var(--colorControlBorder);
+}
+
+/*ControlsGlobal*/
+#controlsGlobal{
+    display: flex;
+    flex-direction: row;
+
+    position: absolute;
+    left: 6em;
+    top: 0.5em;
+
+    z-index: 15;
+
+    background: var(--colorControlBorder);
+    padding: 0.05em;
+
+    box-shadow: 0px 0px 0.1em 0.005em var(--colorShadowBox),
+    0px 0px 0.1em 0.005em var(--colorShadowBox);
+}
+#controlsGlobal div{
+    width: auto;
+    padding: 0.05em;
+
+}
+#controlsGlobal button{
+    border: none;
+    padding: 0.5em;
+}
+#controlsGlobal img{
+    height: 2.1em;
+    padding: 0.1em;
+}
+#controlsGlobal button{
+    width: auto;
+    background-color: var(--colorControlButtonBackground);
+
+}
+#controlsGlobal button:hover{
+    background-color: var(--colorControlBorder);
+}

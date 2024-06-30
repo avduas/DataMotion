@@ -1,0 +1,10 @@
+#flowField{
+    height: 100%;
+    width: 100%;
+}
+.react-flow__panel.react-flow__controls{
+    scale: calc(0.8 * var(--customControlButtonImgHeight));    /*imported from CustomNodes.css */
+}
+.react-flow__panel.react-flow__controls button svg{
+}
+

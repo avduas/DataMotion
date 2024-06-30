@@ -1,0 +1,246 @@
+/*Login space*/
+
+#loginSpace{
+    width: 32%;
+    height: 100vh;
+    min-width: 23em;
+
+    display: flex;
+    flex-direction: column;
+}
+#loginTab{
+    width: fit-content;
+    min-width: 15em;
+    padding: 2.5em;
+    margin-top: 6em;
+
+    margin-right: calc(53% - 7em);
+    margin-left: calc(47% - 8em);
+    
+}
+
+#loginSpace p#loginHeader{
+    font-size: 2em;
+
+    font-weight: 500;
+
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+
+#loginSpace #inputField{
+    display: flex;
+    flex-direction: column;
+}
+#loginSpace #inputField input{
+    margin-top: 0.2em;
+    width: auto;
+    height: 1.3em;
+    padding: 0.3em;
+    padding-left: 0.5em;
+    font-size: 0.9em;
+    background-color: var(--inputText);
+    border-radius: 0.15em;
+    border: 1px solid var(--inputBorder);
+}
+#loginSpace #inputField input:focus{
+    background-color: var(--inputTextFocus);
+    border: 1px solid var(--inputBorderFocus);
+}
+#loginSpace #inputField input.err{
+    background-color: var(--inputTextErr);
+    border: 1px solid var(--inputBorderErr);
+}
+#loginSpace p.inputHeader{
+    font-size: 1.15em;
+
+    text-align: left;
+}
+#loginSpace .errBox{
+    margin-top: 0.15em;
+    min-height: 0.8em;
+    font-size: 0.8em;
+    color: var(--inputBorderErr);
+}
+#loginSpace #checkBox{
+    margin-left: 1em;
+
+    font-size: 1.15em;
+    display: flex;
+    text-align: center;
+}
+#loginSpace #checkBox #keep{
+    align-self: center;
+    margin-right: 0.1em;
+}
+
+#loginSpace .buttonCont{
+    margin: 0.5em 0 1.3em 0;
+
+    display: flex;
+    flex-direction: column;
+}
+#loginSpace .buttonCont button{
+    height: 2.05em;
+    width: auto;
+    padding: 0.2em;
+    margin-top: 0.6em;
+    font-size: 1.25em;
+    font-weight: 500;
+
+    border: 0px;
+    border-radius: 0.21em;
+
+    transition: all 0.5s ease-out ;
+}
+@property --myColor1 {
+    syntax: '<color>';
+    initial-value: rgba(0,0,0,1);
+    inherits: false;
+  }
+  
+@property --myColor2 {
+    syntax: '<color>';
+    initial-value: rgba(16,8,89,1);
+    inherits: false;
+}
+#loginSpace #signIn{
+    color: var(--backgroundColorMain);
+
+    background: rgb(0,0,0);
+    background: linear-gradient(42deg, var(--myColor1) 15%, var(--myColor2) 40%);
+
+    transition: --myColor1 0.5s, --myColor2 0.5s, color 0.5s
+}
+#loginSpace #signIn:hover{
+    color: var(--additionalColorMain);
+    --myColor1: var(--backgroundColorMain);
+    --myColor2: var(--backgroundColorMain);
+
+    box-shadow: 3px 3px 15px -1px var(--colorShadowBox),
+    -3px -3px 15px -1px var(--colorShadowBox);
+}
+#loginSpace #createAcc{
+    font-weight: 600;
+
+    background : -webkit-linear-gradient(24deg, rgba(131,58,180,1) 0%, rgba(87,29,253,1) 36%, rgba(252,176,69,1) 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+#loginSpace #dividingLine{
+    width: auto;
+    height: 1px;
+    background-color: var(--dividingLine);
+
+    margin-top: 0.4em;
+    margin-bottom: 0.5em;
+}
+#loginSpace #forgotPassword{
+    margin-top: 2.4em;
+    font-size: 0.9em;
+    color: var(--fontColorInsufficient);
+    text-decoration: none;
+
+    transition-duration: 1s;
+}
+#loginSpace #forgotPassword:hover{
+    color: var(--fontColorMain);
+    text-decoration: underline;
+}
+
+/*Extra space*/
+
+#extraSpace{
+    width: 68%;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: #fff;
+
+    overflow: hidden;
+    /*background: url(../../public/loginPage_background.jpg) no-repeat left top;*/
+}
+#extraSpace div{
+    height: 135vh;
+    width: auto;
+    background-image: url(../../public/loginPage_background.jpg);
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-size: cover;
+}
+
+/*Toggle Switcher*/
+
+.toggle-switch {
+    margin-right: 0.6em;
+
+    scale: 0.75;
+
+    position: relative;
+    display: inline-block;
+    width: 56px;
+    height: 32px;
+    cursor: pointer;
+  }
+  
+  .toggle-switch input[type="checkbox"] {
+    display: none;
+  }
+  
+  .toggle-switch-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ddd;
+    border-radius: 20px;
+    box-shadow: inset 0 0 0 2px #ccc;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .toggle-switch-handle {
+    position: absolute;
+    top: 4px;
+    left: 5px;
+    width: 23px;
+    height: 23px;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .toggle-switch::before {
+    content: "";
+    position: absolute;
+    top: -25px;
+    right: -35px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #aaa;
+    text-shadow: 1px 1px #fff;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .toggle-switch input[type="checkbox"]:checked + .toggle-switch-handle {
+    transform: translateX(45px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), 0 0 0 3px var(--toggleSwitchColor);
+  }
+  
+  .toggle-switch input[type="checkbox"]:checked + .toggle-switch-background {
+    background-color: var(--toggleSwitchColor);
+    box-shadow: inset 0 0 0 2px var(--toggleSwitchColor);
+  }
+  
+  .toggle-switch input[type="checkbox"]:checked + .toggle-switch:before {
+    content: "On";
+    color: var(--toggleSwitchColor);
+    right: -15px;
+  }
+  
+  .toggle-switch input[type="checkbox"]:checked + .toggle-switch-background .toggle-switch-handle {
+    transform: translateX(25px);
+  }

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="256px" height="256px" viewBox="0 0 512 512" version="1.1" fill="#000000" transform="matrix(-1, 0, 0, 1, 0, 0)" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+  <defs>
+    <bx:guide x="164.541" y="259.239" angle="90"/>
+    <bx:guide x="206.785" y="267.688" angle="0"/>
+    <bx:guide x="158.204" y="263.463" angle="0"/>
+    <bx:guide x="206.36267407072768" y="187.00117872889888" angle="90"/>
+    <bx:guide x="206.36267407072768" y="330.6315776367106" angle="90"/>
+    <bx:guide x="159.04914364133992" y="362.7371779020025" angle="90"/>
+    <bx:guide x="158.20421727066628" y="158.2751485812052" angle="90"/>
+  </defs>
+  <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+  <g id="SVGRepo_iconCarrier" transform="matrix(1.157694, 0, 0, 1.201493, -71.236507, -89.841778)" style="">
+    <title>data-egress</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" style="" transform="matrix(1.067001, 0, 0, 1.067001, -22.23776, -11.650536)">
+      <g id="add" fill="#000000" transform="matrix(1.010733, 0, -0.002263, 1.010733, 38.67798, 107.225469)" style="transform-origin: 243.857px 170.667px;">
+        <path d="M 286.17 0 L 435.503 85.333 L 435.503 256 L 286.17 341.333 L 148.604 262.155 L 179.928 231.339 L 286.17 292.053 L 392.39 231.339 L 392.39 109.973 L 286.17 49.259 L 179.928 109.973 L 146.228 78.457 L 286.17 0 Z M 131.297 91.582 L 161.467 121.752 L 133.894 149.333 L 341.972 150.85 L 341.972 193.896 L 133.894 192 L 161.467 219.582 L 131.297 249.752 L 52.212 170.667 L 131.297 91.582 Z" id="Combined-Shape"/>
+      </g>
+    </g>
+  </g>
+</svg>
